@@ -6,18 +6,21 @@ export const CommentForm = ({ userId, addComment }) => {
   const [commentText, setCommentText] = useState('');
   const [error, setError] = useState(false);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (commentText.trim()) {
+      addComment(commentText, userId);
+      setCommentText('');
+    } else {
+      setError(true);
+    }
+  }
+
   return (
     <form
       className="CommentForm"
-      onSubmit={(event) => {
-        event.preventDefault();
-        if (commentText.trim()) {
-          addComment(commentText, userId);
-          setCommentText('');
-        } else {
-          setError(true);
-        }
-      }}
+      onSubmit={handleSubmit}
     >
       {error && (
         <p className="CommentForm__error">Fill out the filds </p>
