@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e9e6f2;
+  padding: 20px;
+  color: #4d457b;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  margin: 0;
+}
+
+ul li {
+  text-decoration: none;
+  padding: 0;
+}
+
+%stretch-panel {
+  flex-grow: 1;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.App {
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    @extend %stretch-panel;
+  }
+}
